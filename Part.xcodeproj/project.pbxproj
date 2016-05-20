@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */; };
+		EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */; };
+		EB72F8991CE116DA008D2C80 /* UIView+ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8981CE116DA008D2C80 /* UIView+ViewTransition.swift */; };
+		EB72F8BF1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */; };
+		EB72F8C01CE5E707008D2C80 /* water_PNG3290.png in Resources */ = {isa = PBXBuildFile; fileRef = EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */; };
+		EB78F74F1CEF68C800D12838 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78F74E1CEF68C800D12838 /* ViewController2.swift */; };
+		EB78F7511CEF6A5300D12838 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78F7501CEF6A5300D12838 /* ViewController3.swift */; };
 		EBE2A0F11CCE95CF00ABF6B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A0F01CCE95CF00ABF6B4 /* AppDelegate.swift */; };
 		EBE2A0F31CCE95CF00ABF6B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A0F21CCE95CF00ABF6B4 /* ViewController.swift */; };
 		EBE2A0F61CCE95CF00ABF6B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE2A0F41CCE95CF00ABF6B4 /* Main.storyboard */; };
 		EBE2A0F81CCE95CF00ABF6B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE2A0F71CCE95CF00ABF6B4 /* Assets.xcassets */; };
 		EBE2A0FB1CCE95CF00ABF6B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE2A0F91CCE95CF00ABF6B4 /* LaunchScreen.storyboard */; };
+		EBE2A1031CD25DF300ABF6B4 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */; };
+		EBE2A1051CD25FC000ABF6B4 /* DismissalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		EB72F8981CE116DA008D2C80 /* UIView+ViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ViewTransition.swift"; sourceTree = "<group>"; };
+		EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PNG_transparency_demonstration_1.png; sourceTree = "<group>"; };
+		EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_PNG3290.png; sourceTree = "<group>"; };
+		EB78F74E1CEF68C800D12838 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		EB78F7501CEF6A5300D12838 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		EBE2A0ED1CCE95CF00ABF6B4 /* Part.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Part.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE2A0F01CCE95CF00ABF6B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE2A0F21CCE95CF00ABF6B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +38,8 @@
 		EBE2A0F71CCE95CF00ABF6B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE2A0FA1CCE95CF00ABF6B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBE2A0FC1CCE95CF00ABF6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissalController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +72,21 @@
 		EBE2A0EF1CCE95CF00ABF6B4 /* Part */ = {
 			isa = PBXGroup;
 			children = (
+				EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */,
+				EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */,
 				EBE2A0F01CCE95CF00ABF6B4 /* AppDelegate.swift */,
 				EBE2A0F21CCE95CF00ABF6B4 /* ViewController.swift */,
+				EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */,
+				EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */,
 				EBE2A0F41CCE95CF00ABF6B4 /* Main.storyboard */,
 				EBE2A0F71CCE95CF00ABF6B4 /* Assets.xcassets */,
 				EBE2A0F91CCE95CF00ABF6B4 /* LaunchScreen.storyboard */,
 				EBE2A0FC1CCE95CF00ABF6B4 /* Info.plist */,
+				EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */,
+				EB72F8981CE116DA008D2C80 /* UIView+ViewTransition.swift */,
+				EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */,
+				EB78F74E1CEF68C800D12838 /* ViewController2.swift */,
+				EB78F7501CEF6A5300D12838 /* ViewController3.swift */,
 			);
 			path = Part;
 			sourceTree = "<group>";
@@ -125,6 +152,8 @@
 				EBE2A0FB1CCE95CF00ABF6B4 /* LaunchScreen.storyboard in Resources */,
 				EBE2A0F81CCE95CF00ABF6B4 /* Assets.xcassets in Resources */,
 				EBE2A0F61CCE95CF00ABF6B4 /* Main.storyboard in Resources */,
+				EB72F8BF1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png in Resources */,
+				EB72F8C01CE5E707008D2C80 /* water_PNG3290.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +165,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE2A0F31CCE95CF00ABF6B4 /* ViewController.swift in Sources */,
+				EB78F74F1CEF68C800D12838 /* ViewController2.swift in Sources */,
+				EB78F7511CEF6A5300D12838 /* ViewController3.swift in Sources */,
+				EBE2A1051CD25FC000ABF6B4 /* DismissalController.swift in Sources */,
 				EBE2A0F11CCE95CF00ABF6B4 /* AppDelegate.swift in Sources */,
+				EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */,
+				EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */,
+				EBE2A1031CD25DF300ABF6B4 /* PresentationController.swift in Sources */,
+				EB72F8991CE116DA008D2C80 /* UIView+ViewTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Part/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,6 +298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Part/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +324,7 @@
 				EBE2A1011CCE95CF00ABF6B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
