@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB25B6941CF48F3700E57FF9 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB25B6931CF48F3700E57FF9 /* AnimationController.swift */; };
 		EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */; };
 		EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */; };
 		EB72F8991CE116DA008D2C80 /* UIView+ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8981CE116DA008D2C80 /* UIView+ViewTransition.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB25B6931CF48F3700E57FF9 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		EB72F8981CE116DA008D2C80 /* UIView+ViewTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ViewTransition.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				EBE2A0F21CCE95CF00ABF6B4 /* ViewController.swift */,
 				EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */,
 				EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */,
+				EB25B6931CF48F3700E57FF9 /* AnimationController.swift */,
 				EBE2A0F41CCE95CF00ABF6B4 /* Main.storyboard */,
 				EBE2A0F71CCE95CF00ABF6B4 /* Assets.xcassets */,
 				EBE2A0F91CCE95CF00ABF6B4 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				EB78F74F1CEF68C800D12838 /* ViewController2.swift in Sources */,
 				EB78F7511CEF6A5300D12838 /* ViewController3.swift in Sources */,
 				EBE2A1051CD25FC000ABF6B4 /* DismissalController.swift in Sources */,
+				EB25B6941CF48F3700E57FF9 /* AnimationController.swift in Sources */,
 				EBE2A0F11CCE95CF00ABF6B4 /* AppDelegate.swift in Sources */,
 				EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */,
 				EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */,

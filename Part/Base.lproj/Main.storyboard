@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xvq-gp-IXI">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -41,7 +40,7 @@
                                     <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meJ-7P-9ma"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9q-cm-ORV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9q-cm-ORV">
                                 <rect key="frame" x="126" y="390" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4dQ-1d-sh8"/>
@@ -102,7 +101,6 @@
         <!--View Controller2-->
         <scene sceneID="gWK-JG-NbC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rrd-Ge-hIo" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ViewController" id="WhB-CM-LYZ" customClass="ViewController2" customModule="Part" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yPk-5P-M5w"/>
@@ -142,6 +140,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="qOS-Hx-LJ9"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrd-Ge-hIo" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="158"/>
         </scene>
