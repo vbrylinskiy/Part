@@ -28,10 +28,20 @@ class AnimationController: NSObject {
         
         var toImage: UIImage
         
+        let wasHidden = toView.hidden
+        
+        if (wasHidden) {
+            toView.hidden = false
+        }
+        
         UIGraphicsBeginImageContextWithOptions(toView.bounds.size, toView.opaque, 0.0)
         toView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         toImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        if (wasHidden) {
+            toView.hidden = true
+        }
         
         var dx = toView.frame.size.width / CGFloat(n)
         var dy = toView.frame.size.height / CGFloat(n)
@@ -44,7 +54,7 @@ class AnimationController: NSObject {
         for i in 0..<n {
             for j in 0..<n {
                 finalFrames[i][j] = CGRect(origin: CGPoint(x:spx + dx * CGFloat(j), y: spy + dy * CGFloat(i)), size: CGSize(width: dx, height: dy))
-                finalImages[i][j] = UIImage(CGImage:CGImageCreateWithImageInRect(toImage.CGImage, CGRect(x: 0, y: 0, width: dx, height: dy))!)
+                finalImages[i][j] = UIImage(CGImage:CGImageCreateWithImageInRect(toImage.CGImage, CGRect(x: dx * CGFloat(j), y: dy * CGFloat(i), width: dx, height: dy))!)
             }
         }
         
