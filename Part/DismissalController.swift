@@ -17,7 +17,7 @@ class DismissalController: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
+        return 1.0
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

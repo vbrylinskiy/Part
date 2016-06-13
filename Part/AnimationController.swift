@@ -24,7 +24,7 @@ class AnimationController: NSObject {
     }
     
     func animateTransitionWithCompletion (completion: (Void -> Void)) {
-        let n = 20
+        let n = 40
         
         var toImage: UIImage
         
@@ -34,7 +34,7 @@ class AnimationController: NSObject {
             toView.hidden = false
         }
         
-        UIGraphicsBeginImageContextWithOptions(toView.bounds.size, toView.opaque, 0.0)
+        UIGraphicsBeginImageContextWithOptions(toView.bounds.size, toView.opaque, 1.0)
         toView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         toImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -66,20 +66,21 @@ class AnimationController: NSObject {
         
         var viewImage: UIImage
         
-        UIGraphicsBeginImageContextWithOptions(fromView.bounds.size, fromView.opaque, 0.0)
+        UIGraphicsBeginImageContextWithOptions(fromView.bounds.size, fromView.opaque, 1.0)
         fromView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         viewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         fromView.hidden = true
         
-        var initialParts:[[UIView]] = [[UIView]](count:n, repeatedValue:[UIView](count: n, repeatedValue:UIView()))
+        var initialParts:[[CALayer]] = [[CALayer]](count:n, repeatedValue:[CALayer](count: n, repeatedValue:CALayer()))
         
         for i in 0..<n {
             for j in 0..<n {
                 let initialFrame = CGRect(origin: CGPoint(x: spx + dx * CGFloat(j), y: spy + dy * CGFloat(i)), size: CGSize(width: dx, height: dy))
                 
-                let part = UIView(frame: initialFrame)
+                let part = CALayer()
+                part.frame = initialFrame
                 
                 let imageRef = CGImageCreateWithImageInRect(viewImage.CGImage, CGRect(x: dx * CGFloat(j), y: dy * CGFloat(i), width: dx, height: dy))
                 
@@ -89,7 +90,7 @@ class AnimationController: NSObject {
                 
                 let cropImage = UIImage(CGImage: image)
                 
-                part.layer.contents = cropImage.CGImage!
+                part.contents = cropImage.CGImage!
                 
                 initialParts[i][j] = part
             }
@@ -97,7 +98,7 @@ class AnimationController: NSObject {
         
         for i in 0..<n {
             for j in 0..<n {
-                containerView.addSubview(initialParts[i][j])
+                containerView.layer.addSublayer(initialParts[i][j])
             }
         }
         
@@ -105,7 +106,7 @@ class AnimationController: NSObject {
         CATransaction.setCompletionBlock({
             for i in 0..<n {
                 for j in 0..<n {
-                    initialParts[i][j].removeFromSuperview()
+                    initialParts[i][j].removeFromSuperlayer()
                 }
             }
             
@@ -114,7 +115,7 @@ class AnimationController: NSObject {
         
         for i in 0..<n {
             for j in 0..<n {
-                let layer = initialParts[i][j].layer
+                let layer = initialParts[i][j]
                 let animationStartTime = CACurrentMediaTime() + Double(i+j) * transitionDuration / (Double(n)+Double(n)-1)
                 let frame = finalFrames[i][j]
                 
@@ -128,6 +129,7 @@ class AnimationController: NSObject {
                 
                 let changeFrameAnim:CABasicAnimation = CABasicAnimation(keyPath: "position")
                 changeFrameAnim.fillMode = kCAFillModeForwards;
+                changeFrameAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
                 changeFrameAnim.removedOnCompletion = false;
                 changeFrameAnim.beginTime = animationStartTime
                 changeFrameAnim.fromValue = NSValue(CGPoint: layer.position)
