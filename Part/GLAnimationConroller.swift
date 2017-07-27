@@ -16,12 +16,18 @@ class GLAnimationConroller: NSObject {
     let transitionDuration: Double
     var glView: OpengGLView!
     var displayLink: CADisplayLink!
+    var bgShader: Shader!
     var shader: Shader!
+    var bgTexture: GLKTextureInfo!
     var texture1: GLKTextureInfo!
     var texture2: GLKTextureInfo!
-    fileprivate var positionSlot: GLuint = 0
+    fileprivate var bgPositionSlot: GLuint = 0
+    fileprivate var startPositionSlot: GLuint = 0
+    fileprivate var endPositionSlot: GLuint = 0
+    fileprivate var bgTexCoordSlot: GLuint = 0
     fileprivate var texCoordSlot: GLuint = 0
     fileprivate var projectionSlot: GLuint = 0
+    fileprivate var bgTextureSlot: GLuint = 0
     fileprivate var texture1Slot: GLuint = 0
     fileprivate var texture2Slot: GLuint = 0
     
@@ -37,6 +43,21 @@ class GLAnimationConroller: NSObject {
         2, 0, 3
     ]
     
+    var bgVertexBuffer: GLuint = 0
+
+    
+    struct Vertex {
+        var Position:(Float, Float, Float)
+        var TexCoord:(Float, Float)
+    }
+    
+    let vertices = [Vertex(Position: (-1, -1, 0), TexCoord: (0.0, 1.0)),
+                    Vertex(Position: (-1, 1, 0), TexCoord: (0.0, 0.0)),
+                    Vertex(Position: (1, -1, 0), TexCoord: (1.0, 1.0)),
+                    Vertex(Position: (1, -1, 0), TexCoord: (1.0, 1.0)),
+                    Vertex(Position: (-1, 1, 0), TexCoord: (0.0, 0.0)),
+                    Vertex(Position: (1, 1, 0), TexCoord: (1.0, 0.0))]
+    
     init(fromView: UIView, toView: UIView, containerView: UIView, transitionDuration: Double) {
         self.fromView = fromView
         self.toView = toView
@@ -47,10 +68,19 @@ class GLAnimationConroller: NSObject {
     }
     
     func imageFrom(view: UIView) -> UIImage {
+        let isHidden = view.isHidden
+        
+        if isHidden {
+            view.isHidden = false
+        }
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0.0)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        if isHidden {
+            view.isHidden = true
+        }
         return snapshotImageFromMyView!
     }
     
@@ -58,8 +88,14 @@ class GLAnimationConroller: NSObject {
         
         self.startTime = CACurrentMediaTime()
 
+        let wasHidden = toView.isHidden
+        
         
         let fromImage = self.imageFrom(view: self.fromView)
+        
+        fromView.isHidden = true
+        
+        let bgImage = self.imageFrom(view: self.containerView)
         let toImage = self.imageFrom(view: self.toView)
         
         self.glView = OpengGLView(frame: self.containerView.frame)
@@ -67,18 +103,23 @@ class GLAnimationConroller: NSObject {
         
         EAGLContext.setCurrent(self.glView.context)
         
+        self.bgShader = Shader(vertexFile: Bundle.main.path(forResource: "Vertex2", ofType: "vs")!,
+                             fragmentFile: Bundle.main.path(forResource: "Fragment2", ofType: "fs")!)
+        
         self.shader = Shader(vertexFile: Bundle.main.path(forResource: "Vertex", ofType: "vs")!,
                              fragmentFile: Bundle.main.path(forResource: "Fragment", ofType: "fs")!)
         self.shader.use()
-        positionSlot = GLuint(glGetAttribLocation(self.shader.program, "Position"))
+        startPositionSlot = GLuint(glGetAttribLocation(self.shader.program, "StartPosition"))
+        endPositionSlot = GLuint(glGetAttribLocation(self.shader.program, "EndPosition"))
         texCoordSlot = GLuint(glGetAttribLocation(self.shader.program, "TexCoordIn"))
         projectionSlot = GLuint(glGetUniformLocation(self.shader.program, "Projection"))
         texture1Slot = GLuint(glGetUniformLocation(self.shader.program, "Texture1"))
         texture2Slot = GLuint(glGetUniformLocation(self.shader.program, "Texture2"))
         mixValueSlot = GLuint(glGetUniformLocation(self.shader.program, "MixValue"))
-        glEnableVertexAttribArray(positionSlot)
+        glEnableVertexAttribArray(startPositionSlot)
+        glEnableVertexAttribArray(endPositionSlot)
         glEnableVertexAttribArray(texCoordSlot)
-
+    
         self.texture1 = try! GLKTextureLoader.texture(with: fromImage.cgImage!, options: nil)
         glActiveTexture(GLenum(GL_TEXTURE0));
         glUniform1i(GLint(texture1Slot), 0);
@@ -105,6 +146,21 @@ class GLAnimationConroller: NSObject {
         glBindBuffer(GLenum(GL_ELEMENT_ARRAY_BUFFER), indexBuffer)
         glBufferData(GLenum(GL_ELEMENT_ARRAY_BUFFER), MemoryLayout<GLubyte>.stride * self.indices.count, self.indices, GLenum(GL_STATIC_DRAW))
         
+        self.bgShader.use()
+        bgPositionSlot = GLuint(glGetAttribLocation(self.bgShader.program, "Position"))
+        bgTexCoordSlot = GLuint(glGetAttribLocation(self.bgShader.program, "TexCoordIn"))
+        bgTextureSlot = GLuint(glGetUniformLocation(self.bgShader.program, "Texture"))
+        
+        glActiveTexture(GLenum(GL_TEXTURE2));
+        self.bgTexture = try! GLKTextureLoader.texture(with: bgImage.cgImage!, options: nil)
+        glUniform1i(GLint(bgTextureSlot), 2);
+        glBindTexture(GLenum(GL_TEXTURE_2D), self.bgTexture.name);
+        
+        glGenBuffers(1, &self.bgVertexBuffer)
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), bgVertexBuffer)
+        glBufferData(GLenum(GL_ARRAY_BUFFER), MemoryLayout<Vertex>.stride * self.vertices.count, vertices, GLenum(GL_STATIC_DRAW))
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+        
         
         self.displayLink = CADisplayLink(target: self, selector: #selector(render))
         self.displayLink.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
@@ -112,16 +168,19 @@ class GLAnimationConroller: NSObject {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + self.transitionDuration, execute: {
             self.displayLink.invalidate()
+            self.glView.removeFromSuperview()
             completion()
         })
     }
     
     func generateSprites() {
-        let n = 3
+        let n = 10
         var curX = self.fromView.frame.origin.x
         var curY = self.fromView.frame.origin.y
         let deltaX = self.fromView.frame.size.width / CGFloat(n)
         let deltaY = self.fromView.frame.size.height / CGFloat(n)
+        let delatXRes = self.toView.frame.size.width / CGFloat(n)
+        let delatYRes = self.toView.frame.size.height / CGFloat(n)
         let texWidth = 1.0/CGFloat(n)
         let texHeight = 1.0/CGFloat(n)
         
@@ -129,7 +188,12 @@ class GLAnimationConroller: NSObject {
             for j in (0 ..< n).reversed() {
                 curX = self.fromView.frame.origin.x + CGFloat(i) * deltaX
                 curY = self.fromView.frame.origin.y + CGFloat(j) * deltaY
-                self.sprites.append(Sprite(frame: CGRect(x: curX, y: curY, width: deltaX, height: deltaY),
+                
+                let curResX = self.toView.frame.origin.x + CGFloat(i) * delatXRes
+                let curResY = self.toView.frame.origin.y + CGFloat(j) * delatYRes
+                
+                self.sprites.append(Sprite(startFrame: CGRect(x: curX, y: curY, width: deltaX, height: deltaY),
+                                           endFrame: CGRect(x: curResX, y: curResY, width: delatXRes, height: delatYRes),
                                            textureFrame: CGRect(x: CGFloat(i) * texWidth, y: CGFloat(j) * texWidth, width: texWidth, height: texHeight)))
             }
         }
@@ -149,10 +213,21 @@ class GLAnimationConroller: NSObject {
         
         glUniform1f(GLint(mixValueSlot), min(Float((CACurrentMediaTime() - startTime) / self.transitionDuration), 1.0));
 
+        self.bgShader.use()
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), bgVertexBuffer)
+        
+        glVertexAttribPointer(bgPositionSlot, 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 20, BUFFER_OFFSET(0))
+        glVertexAttribPointer(bgTexCoordSlot, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 20, BUFFER_OFFSET(12))
+        glDrawArrays(GLenum(GL_TRIANGLES), 0, GLsizei(self.indices.count))
+        glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
+        
+        self.shader.use()
+        
         for sprite in self.sprites {
             sprite.bind()
-            glVertexAttribPointer(positionSlot, 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 20, BUFFER_OFFSET(0))
-            glVertexAttribPointer(texCoordSlot, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 20, BUFFER_OFFSET(12))
+            glVertexAttribPointer(startPositionSlot, 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 32, BUFFER_OFFSET(0))
+            glVertexAttribPointer(endPositionSlot, 3, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 32, BUFFER_OFFSET(12))
+            glVertexAttribPointer(texCoordSlot, 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 32, BUFFER_OFFSET(24))
             glDrawElements(GLenum(GL_TRIANGLES), GLsizei(indices.count), GLenum(GL_UNSIGNED_BYTE), nil)
             sprite.unbind()
         }

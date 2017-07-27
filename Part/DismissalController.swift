@@ -11,14 +11,14 @@ import UIKit
 class DismissalController: NSObject, UIViewControllerAnimatedTransitioning {
     
     let presentationView: UIView
-    var animationController: AnimationController!
+    var animationController: GLAnimationConroller!
 
     init(presentationView view: UIView) {
         self.presentationView = view
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 1.0
+        return 2.0
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -35,7 +35,7 @@ class DismissalController: NSObject, UIViewControllerAnimatedTransitioning {
         
         containerView.addSubview(toView)
         
-        self.animationController = AnimationController(fromView: fromView,
+        self.animationController = GLAnimationConroller(fromView: fromView,
                                                       toView: self.presentationView,
                                                       containerView: containerView,
                                                       transitionDuration: self.transitionDuration(using: transitionContext))

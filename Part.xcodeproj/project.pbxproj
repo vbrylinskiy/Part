@@ -12,6 +12,8 @@
 		EB088C4B1EF9BB1900ED2332 /* OpengGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB088C4A1EF9BB1900ED2332 /* OpengGLView.swift */; };
 		EB088C8D1EFFD78400ED2332 /* 99-awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = EB088C8C1EFFD78400ED2332 /* 99-awesomeface.png */; };
 		EB13F04B1F2923C500E50425 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13F04A1F2923C500E50425 /* Sprite.swift */; };
+		EB13F04D1F2A817F00E50425 /* Vertex2.vs in Resources */ = {isa = PBXBuildFile; fileRef = EB13F04C1F2A817F00E50425 /* Vertex2.vs */; };
+		EB13F04F1F2A818B00E50425 /* Fragment2.fs in Resources */ = {isa = PBXBuildFile; fileRef = EB13F04E1F2A818B00E50425 /* Fragment2.fs */; };
 		EB25B6941CF48F3700E57FF9 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB25B6931CF48F3700E57FF9 /* AnimationController.swift */; };
 		EB3B98B21D5A57A400738DEC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B98B11D5A57A400738DEC /* OpenGLES.framework */; };
 		EB3B98B41D5A57D900738DEC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B98B31D5A57D900738DEC /* GLKit.framework */; };
@@ -37,6 +39,8 @@
 		EB088C4A1EF9BB1900ED2332 /* OpengGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpengGLView.swift; sourceTree = "<group>"; };
 		EB088C8C1EFFD78400ED2332 /* 99-awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "99-awesomeface.png"; sourceTree = "<group>"; };
 		EB13F04A1F2923C500E50425 /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
+		EB13F04C1F2A817F00E50425 /* Vertex2.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Vertex2.vs; sourceTree = "<group>"; };
+		EB13F04E1F2A818B00E50425 /* Fragment2.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Fragment2.fs; sourceTree = "<group>"; };
 		EB25B6931CF48F3700E57FF9 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		EB3B98B11D5A57A400738DEC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		EB3B98B31D5A57D900738DEC /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -117,6 +121,8 @@
 				EBE93F401F01BD88005B7445 /* TextureHelper.m */,
 				EBE93F3E1F01BD87005B7445 /* Part-Bridging-Header.h */,
 				EB13F04A1F2923C500E50425 /* Sprite.swift */,
+				EB13F04C1F2A817F00E50425 /* Vertex2.vs */,
+				EB13F04E1F2A818B00E50425 /* Fragment2.fs */,
 			);
 			path = Part;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE2A0FB1CCE95CF00ABF6B4 /* LaunchScreen.storyboard in Resources */,
+				EB13F04F1F2A818B00E50425 /* Fragment2.fs in Resources */,
 				EBE2A0F81CCE95CF00ABF6B4 /* Assets.xcassets in Resources */,
 				EB088C8D1EFFD78400ED2332 /* 99-awesomeface.png in Resources */,
 				EB088C431EF9340000ED2332 /* Vertex.vs in Resources */,
+				EB13F04D1F2A817F00E50425 /* Vertex2.vs in Resources */,
 				EBE2A0F61CCE95CF00ABF6B4 /* Main.storyboard in Resources */,
 				EB088C451EF9346800ED2332 /* Fragment.fs in Resources */,
 			);
@@ -330,7 +338,7 @@
 				INFOPLIST_FILE = Part/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
+				PRODUCT_BUNDLE_IDENTIFIER = void.Part.qweqwe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Part/Part-Bridging-Header.h";
@@ -349,7 +357,7 @@
 				INFOPLIST_FILE = Part/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
+				PRODUCT_BUNDLE_IDENTIFIER = void.Part.qweqwe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Part/Part-Bridging-Header.h";
