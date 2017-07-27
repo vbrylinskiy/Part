@@ -15,9 +15,7 @@ class ViewController: UIViewController {
 //    var viewImage: UIImage!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    
-    let navDelegate = NavigationControllerDelegate()
-    
+        
     var arr = Array<UIView>()
     
     override func viewDidLoad() {
@@ -99,8 +97,8 @@ class ViewController: UIViewController {
 //        
 //    }
     
-    @IBAction func push(sender: UIView) {
-        let vc: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController")
+    @IBAction func push(_ sender: UIView) {
+        let vc: UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "ViewController")
         
         self.navigationController?.pushViewController(vc, fromView: sender, animated: true)
 //        self.navigationController?.pushViewController(vc, animated: true)

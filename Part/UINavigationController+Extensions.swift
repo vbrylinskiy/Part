@@ -29,7 +29,7 @@ extension UINavigationController {
         }
     }
     
-    func pushViewController(viewController: UIViewController, fromView view: UIView, animated: Bool) {
+    func pushViewController(_ viewController: UIViewController, fromView view: UIView, animated: Bool) {
         self.viewsForScreens?[viewController] = view
         self.pushViewController(viewController, animated: true)
     }

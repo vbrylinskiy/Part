@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB088C431EF9340000ED2332 /* Vertex.vs in Resources */ = {isa = PBXBuildFile; fileRef = EB088C421EF9340000ED2332 /* Vertex.vs */; };
+		EB088C451EF9346800ED2332 /* Fragment.fs in Resources */ = {isa = PBXBuildFile; fileRef = EB088C441EF9346800ED2332 /* Fragment.fs */; };
+		EB088C4B1EF9BB1900ED2332 /* OpengGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB088C4A1EF9BB1900ED2332 /* OpengGLView.swift */; };
+		EB088C8D1EFFD78400ED2332 /* 99-awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = EB088C8C1EFFD78400ED2332 /* 99-awesomeface.png */; };
+		EB13F04B1F2923C500E50425 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB13F04A1F2923C500E50425 /* Sprite.swift */; };
 		EB25B6941CF48F3700E57FF9 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB25B6931CF48F3700E57FF9 /* AnimationController.swift */; };
+		EB3B98B21D5A57A400738DEC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B98B11D5A57A400738DEC /* OpenGLES.framework */; };
+		EB3B98B41D5A57D900738DEC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3B98B31D5A57D900738DEC /* GLKit.framework */; };
+		EB6D87541EF07DC700B7122D /* GLAnimationConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D87531EF07DC700B7122D /* GLAnimationConroller.swift */; };
+		EB6D87691EF8108C00B7122D /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6D87681EF8108C00B7122D /* Shader.swift */; };
 		EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */; };
 		EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */; };
-		EB72F8BF1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */; };
-		EB72F8C01CE5E707008D2C80 /* water_PNG3290.png in Resources */ = {isa = PBXBuildFile; fileRef = EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */; };
 		EB78F74F1CEF68C800D12838 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78F74E1CEF68C800D12838 /* ViewController2.swift */; };
 		EB78F7511CEF6A5300D12838 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78F7501CEF6A5300D12838 /* ViewController3.swift */; };
 		EBE2A0F11CCE95CF00ABF6B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A0F01CCE95CF00ABF6B4 /* AppDelegate.swift */; };
@@ -21,14 +28,22 @@
 		EBE2A0FB1CCE95CF00ABF6B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE2A0F91CCE95CF00ABF6B4 /* LaunchScreen.storyboard */; };
 		EBE2A1031CD25DF300ABF6B4 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */; };
 		EBE2A1051CD25FC000ABF6B4 /* DismissalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */; };
+		EBE93F411F01BD88005B7445 /* TextureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE93F401F01BD88005B7445 /* TextureHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB088C421EF9340000ED2332 /* Vertex.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Vertex.vs; sourceTree = "<group>"; };
+		EB088C441EF9346800ED2332 /* Fragment.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Fragment.fs; sourceTree = "<group>"; };
+		EB088C4A1EF9BB1900ED2332 /* OpengGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpengGLView.swift; sourceTree = "<group>"; };
+		EB088C8C1EFFD78400ED2332 /* 99-awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "99-awesomeface.png"; sourceTree = "<group>"; };
+		EB13F04A1F2923C500E50425 /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		EB25B6931CF48F3700E57FF9 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		EB3B98B11D5A57A400738DEC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		EB3B98B31D5A57D900738DEC /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		EB6D87531EF07DC700B7122D /* GLAnimationConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLAnimationConroller.swift; sourceTree = "<group>"; };
+		EB6D87681EF8108C00B7122D /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
 		EB72F8941CDCD58A008D2C80 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
-		EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PNG_transparency_demonstration_1.png; sourceTree = "<group>"; };
-		EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_PNG3290.png; sourceTree = "<group>"; };
 		EB78F74E1CEF68C800D12838 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		EB78F7501CEF6A5300D12838 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		EBE2A0ED1CCE95CF00ABF6B4 /* Part.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Part.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +55,9 @@
 		EBE2A0FC1CCE95CF00ABF6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissalController.swift; sourceTree = "<group>"; };
+		EBE93F3E1F01BD87005B7445 /* Part-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Part-Bridging-Header.h"; sourceTree = "<group>"; };
+		EBE93F3F1F01BD88005B7445 /* TextureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureHelper.h; sourceTree = "<group>"; };
+		EBE93F401F01BD88005B7445 /* TextureHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3B98B41D5A57D900738DEC /* GLKit.framework in Frameworks */,
+				EB3B98B21D5A57A400738DEC /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +76,8 @@
 		EBE2A0E41CCE95CF00ABF6B4 = {
 			isa = PBXGroup;
 			children = (
+				EB3B98B31D5A57D900738DEC /* GLKit.framework */,
+				EB3B98B11D5A57A400738DEC /* OpenGLES.framework */,
 				EBE2A0EF1CCE95CF00ABF6B4 /* Part */,
 				EBE2A0EE1CCE95CF00ABF6B4 /* Products */,
 			);
@@ -72,13 +94,13 @@
 		EBE2A0EF1CCE95CF00ABF6B4 /* Part */ = {
 			isa = PBXGroup;
 			children = (
-				EB72F8BD1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png */,
-				EB72F8BE1CE5E707008D2C80 /* water_PNG3290.png */,
+				EB088C8C1EFFD78400ED2332 /* 99-awesomeface.png */,
 				EBE2A0F01CCE95CF00ABF6B4 /* AppDelegate.swift */,
 				EBE2A0F21CCE95CF00ABF6B4 /* ViewController.swift */,
 				EBE2A1021CD25DF300ABF6B4 /* PresentationController.swift */,
 				EBE2A1041CD25FC000ABF6B4 /* DismissalController.swift */,
 				EB25B6931CF48F3700E57FF9 /* AnimationController.swift */,
+				EB6D87531EF07DC700B7122D /* GLAnimationConroller.swift */,
 				EBE2A0F41CCE95CF00ABF6B4 /* Main.storyboard */,
 				EBE2A0F71CCE95CF00ABF6B4 /* Assets.xcassets */,
 				EBE2A0F91CCE95CF00ABF6B4 /* LaunchScreen.storyboard */,
@@ -87,6 +109,14 @@
 				EB72F8961CE10B90008D2C80 /* NavigationControllerDelegate.swift */,
 				EB78F74E1CEF68C800D12838 /* ViewController2.swift */,
 				EB78F7501CEF6A5300D12838 /* ViewController3.swift */,
+				EB6D87681EF8108C00B7122D /* Shader.swift */,
+				EB088C421EF9340000ED2332 /* Vertex.vs */,
+				EB088C441EF9346800ED2332 /* Fragment.fs */,
+				EB088C4A1EF9BB1900ED2332 /* OpengGLView.swift */,
+				EBE93F3F1F01BD88005B7445 /* TextureHelper.h */,
+				EBE93F401F01BD88005B7445 /* TextureHelper.m */,
+				EBE93F3E1F01BD87005B7445 /* Part-Bridging-Header.h */,
+				EB13F04A1F2923C500E50425 /* Sprite.swift */,
 			);
 			path = Part;
 			sourceTree = "<group>";
@@ -123,6 +153,9 @@
 				TargetAttributes = {
 					EBE2A0EC1CCE95CF00ABF6B4 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HU7ATM8NJ3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -151,9 +184,10 @@
 			files = (
 				EBE2A0FB1CCE95CF00ABF6B4 /* LaunchScreen.storyboard in Resources */,
 				EBE2A0F81CCE95CF00ABF6B4 /* Assets.xcassets in Resources */,
+				EB088C8D1EFFD78400ED2332 /* 99-awesomeface.png in Resources */,
+				EB088C431EF9340000ED2332 /* Vertex.vs in Resources */,
 				EBE2A0F61CCE95CF00ABF6B4 /* Main.storyboard in Resources */,
-				EB72F8BF1CE5E707008D2C80 /* PNG_transparency_demonstration_1.png in Resources */,
-				EB72F8C01CE5E707008D2C80 /* water_PNG3290.png in Resources */,
+				EB088C451EF9346800ED2332 /* Fragment.fs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +198,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB6D87691EF8108C00B7122D /* Shader.swift in Sources */,
 				EBE2A0F31CCE95CF00ABF6B4 /* ViewController.swift in Sources */,
 				EB78F74F1CEF68C800D12838 /* ViewController2.swift in Sources */,
 				EB78F7511CEF6A5300D12838 /* ViewController3.swift in Sources */,
+				EB13F04B1F2923C500E50425 /* Sprite.swift in Sources */,
+				EBE93F411F01BD88005B7445 /* TextureHelper.m in Sources */,
 				EBE2A1051CD25FC000ABF6B4 /* DismissalController.swift in Sources */,
 				EB25B6941CF48F3700E57FF9 /* AnimationController.swift in Sources */,
 				EBE2A0F11CCE95CF00ABF6B4 /* AppDelegate.swift in Sources */,
+				EB088C4B1EF9BB1900ED2332 /* OpengGLView.swift in Sources */,
+				EB6D87541EF07DC700B7122D /* GLAnimationConroller.swift in Sources */,
 				EB72F8951CDCD58A008D2C80 /* UINavigationController+Extensions.swift in Sources */,
 				EB72F8971CE10B90008D2C80 /* NavigationControllerDelegate.swift in Sources */,
 				EBE2A1031CD25DF300ABF6B4 /* PresentationController.swift in Sources */,
@@ -285,11 +324,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HU7ATM8NJ3;
 				INFOPLIST_FILE = Part/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Part/Part-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -297,11 +343,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HU7ATM8NJ3;
 				INFOPLIST_FILE = Part/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = void.Part;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Part/Part-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

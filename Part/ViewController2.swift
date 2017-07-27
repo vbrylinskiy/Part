@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController2: UIViewController {
-    @IBAction func push(sender: UIView) {
-        let vc: UIViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController1")
+    @IBAction func push(_ sender: UIView) {
+        let vc: UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "ViewController1")
         
         self.navigationController?.pushViewController(vc, fromView: sender, animated: true)
         //        self.navigationController?.pushViewController(vc, animated: true)

@@ -9,12 +9,12 @@
 import UIKit
 
 class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
-        case .Push:
+        case .push:
             guard let view = navigationController.viewsForScreens?[toVC] else { return nil }
             return PresentationController(presentationView: view)
-        case .Pop:
+        case .pop:
             guard let view = navigationController.viewsForScreens?[fromVC] else { return nil }
             navigationController.viewsForScreens?[fromVC] = nil
             return DismissalController(presentationView: view)

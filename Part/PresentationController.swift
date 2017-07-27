@@ -11,31 +11,28 @@ import UIKit
 class PresentationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     let presentationView: UIView
+    var animationController: GLAnimationConroller!
     
     init(presentationView view: UIView) {
         self.presentationView = view
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 1.0
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 2.0
     }
 
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else {
+        guard let toView = transitionContext.view(forKey: UITransitionContextViewKey.to) else {
             return
         }
         
-        guard let containerView = transitionContext.containerView() else {
-            return
-        }
+        let containerView = transitionContext.containerView
         
-        toView.updateConstraints()
-        
-        let animationController = AnimationController(fromView: self.presentationView,
-                                                      toView: toView,
-                                                      containerView: containerView,
-                                                      transitionDuration: self.transitionDuration(transitionContext))
+        self.animationController = GLAnimationConroller(fromView: self.presentationView,
+                                                         toView: toView,
+                                                         containerView: containerView,
+                                                         transitionDuration: self.transitionDuration(using: transitionContext))
         
         animationController.animateTransitionWithCompletion {
             containerView.addSubview(toView)
