@@ -27,6 +27,7 @@ class GLAnimationConroller: NSObject {
     fileprivate var bgTexCoordSlot: GLuint = 0
     fileprivate var texCoordSlot: GLuint = 0
     fileprivate var projectionSlot: GLuint = 0
+    fileprivate var modelSlot: GLuint = 0
     fileprivate var bgTextureSlot: GLuint = 0
     fileprivate var texture1Slot: GLuint = 0
     fileprivate var texture2Slot: GLuint = 0
@@ -113,6 +114,7 @@ class GLAnimationConroller: NSObject {
         endPositionSlot = GLuint(glGetAttribLocation(self.shader.program, "EndPosition"))
         texCoordSlot = GLuint(glGetAttribLocation(self.shader.program, "TexCoordIn"))
         projectionSlot = GLuint(glGetUniformLocation(self.shader.program, "Projection"))
+        modelSlot = GLuint(glGetUniformLocation(self.shader.program, "Model"))
         texture1Slot = GLuint(glGetUniformLocation(self.shader.program, "Texture1"))
         texture2Slot = GLuint(glGetUniformLocation(self.shader.program, "Texture2"))
         mixValueSlot = GLuint(glGetUniformLocation(self.shader.program, "MixValue"))
@@ -130,6 +132,9 @@ class GLAnimationConroller: NSObject {
         glBindTexture(GLenum(GL_TEXTURE_2D), self.texture2.name);
         
         var projection = GLKMatrix4MakeOrtho(0, Float(self.glView.frame.width), Float(self.glView.frame.height), 0.0, -1, 1)
+        var model = GLKMatrix4Identity
+        model = GLKMatrix4RotateX(model, 0.15)
+//        var model = GLKMatrix4MakeOrtho(0, Float(self.glView.frame.width), Float(self.glView.frame.height), 0.0, -1, 1)
         
         let f = GLboolean(GL_FALSE)
         // Swift 3:

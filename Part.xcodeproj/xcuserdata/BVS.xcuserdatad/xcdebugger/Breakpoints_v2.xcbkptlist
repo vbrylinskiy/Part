@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Part/GLAnimationConroller.swift"
-            timestampString = "522882540.265502"
+            timestampString = "522883569.717744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "animateTransitionWithCompletion(_:)"
             landmarkType = "7">
          </BreakpointContent>
